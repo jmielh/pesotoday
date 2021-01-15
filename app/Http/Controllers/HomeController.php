@@ -31,6 +31,9 @@ class HomeController extends Controller
 
         if ($searchUser) {
             $user = $searchUser;
+            if (!$user->phone) {
+                $user->update(['phone' => $request->s_phone]);
+            }
             Auth::loginUsingId($user->id, true);
         } else {
 
@@ -67,9 +70,14 @@ class HomeController extends Controller
             'amount_ves' => $amount_ves,
             'slug' => Str::slug(Str::random(64)) . '-' . $user->id,
         ]);
-
-
-        return Inertia::render('Payment', ['user' => $user, 'receipt' => $receipt]);
+        return redirect()->route('paymentAwait', $order->slug);
+    }
+    function await($slug)
+    {
+        $order = Order::where('slug', $slug)->firstOrFail();
+        $user = $order->user;
+        $receipt = $order->receipt;
+        return Inertia::render('Payment', ['user' => $user, 'receipt' => $receipt, 'order' => $order]);
     }
     function createTeam(User $user)
     {

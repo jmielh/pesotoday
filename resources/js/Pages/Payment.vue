@@ -126,8 +126,8 @@
                     <!--  Timer Component  -->
                     <div class="flex justify-center mt-10">
                         <Timer
-                            :starttime="Date.now()"
-                            :endtime="Date.now() + 3600 * 1000"
+                            :starttime="transferCreation"
+                            :endtime="getFinalTime"
                             :trans="{
                                 day: 'Day',
                                 hours: 'Hours',
@@ -333,7 +333,7 @@ import Timer from "../Shared/Timer";
 import MainLayout from "@/Layouts/MainLayout";
 
 export default {
-    props: ["user", "receipt"],
+    props: ["user", "receipt", "order"],
     components: { MainLayout, Timer },
     data: () => ({
         send: 10000,
@@ -347,6 +347,13 @@ export default {
                 style: "currency",
                 currency: "VES"
             }).format(total);
+        },
+        transferCreation() {
+            return new Date(this.order.created_at).getTime();
+        },
+        getFinalTime() {
+            const newDate = new Date(this.order.created_at);
+            return newDate.setHours(newDate.getHours() + 1);
         }
     },
     mounted() {
@@ -372,7 +379,8 @@ export default {
             fileInput.addEventListener("change", function(event) {
                 the_return.innerHTML = this.value;
             });
-        }
+        },
+        newDate() {}
     }
 };
 </script>

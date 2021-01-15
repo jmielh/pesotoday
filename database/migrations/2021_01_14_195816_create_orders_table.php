@@ -15,8 +15,8 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->string('slug')->unique();
-            $table->string('amount_clp')->unique();
-            $table->string('amount_ves')->unique();
+            $table->string('amount_clp');
+            $table->string('amount_ves');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('receipt_id');

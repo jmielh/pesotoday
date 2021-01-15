@@ -70,7 +70,7 @@
         </div>
         <div class=" h-2" style="background-color:rgb(255,0,0)"></div>
         <div
-            style="background-image:url('images/1x/23452352345.jpg'); height:28rem"
+            style="background-image:url('/images/1x/23452352345.jpg'); height:28rem"
             class=" bg-no-repeat bg-cover bg-bottom"
         >
             <navbar-desktop></navbar-desktop>

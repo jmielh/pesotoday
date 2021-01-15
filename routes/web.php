@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    Auth::loginUsingId(1);
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -27,7 +26,25 @@ Route::get('/', function () {
     ]);
 });
 Route::post('/transfer', [HomeController::class, 'transfer']);
+Route::get('/transfer', function () {
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
 Route::post('/payment', [HomeController::class, 'payment']);
+Route::get('/payment', function () {
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+Route::get('/payment/order/{slug}', [HomeController::class, 'await'])->name('paymentAwait');
+
 Route::get('/order/{slug}', [HomeController::class, 'showOrder']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
