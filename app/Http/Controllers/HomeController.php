@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Team;
 use App\Models\User;
 use Inertia\Inertia;
+use App\Mail\Welcome;
 use App\Models\Order;
 use App\Models\Receipt;
 use Illuminate\Support\Str;
+use App\Mail\TransferSubmit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -37,16 +40,18 @@ class HomeController extends Controller
             Auth::loginUsingId($user->id, true);
         } else {
 
-            $user = DB::transaction(function () use ($request) {
+            $password = Str::random(8);
+            $user = DB::transaction(function () use ($request, $password) {
                 return tap(User::create([
                     'name' => $request['s_name'],
                     'email' => $request['s_email'],
-                    'password' => Hash::make(Str::random(8)),
+                    'password' => Hash::make($password),
                     'phone' => $request->s_phone,
                 ]), function (User $user) {
                     $this->createTeam($user);
                 });
             });
+            Mail::to($user)->send(new Welcome($user, $password));
             Auth::loginUsingId($user->id, true);
         }
         $searchReceipt = Receipt::where('email', $request->r_email)->first();
@@ -77,6 +82,7 @@ class HomeController extends Controller
         $order = Order::where('slug', $slug)->firstOrFail();
         $user = $order->user;
         $receipt = $order->receipt;
+        Mail::to($user)->send(new TransferSubmit($user, $order));
         return Inertia::render('Payment', ['user' => $user, 'receipt' => $receipt, 'order' => $order]);
     }
     function createTeam(User $user)
@@ -89,8 +95,11 @@ class HomeController extends Controller
     }
     function showOrder($slug)
     {
+
         $order = Order::where('slug', $slug)->firstOrFail();
         $order->receipt;
+        $user = $order->user;
+
         return Inertia::render('OrderShow', ['order' => $order]);
     }
 }

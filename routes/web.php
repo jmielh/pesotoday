@@ -1,10 +1,14 @@
 <?php
 
+use App\Models\User;
 use Inertia\Inertia;
+use App\Mail\Welcome;
+use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +21,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+// Route::get('/testmail', function () {
+//     $user = User::find(1);
+//     $order = Order::find(1);
+//     return view('emails.transfer-submit', ['user' => $user, 'order' => $order]);
+// });
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),

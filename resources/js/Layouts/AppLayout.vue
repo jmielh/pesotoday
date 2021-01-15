@@ -148,13 +148,18 @@
                                         <div
                                             class="block px-4 py-2 text-xs text-gray-400"
                                         >
-                                            Manage Account
+                                            Administrar cuenta
                                         </div>
+                                        <jet-dropdown-link
+                                            :href="route('dashboard')"
+                                        >
+                                            Mi cuenta
+                                        </jet-dropdown-link>
 
                                         <jet-dropdown-link
                                             :href="route('profile.show')"
                                         >
-                                            Profile
+                                            Perfil
                                         </jet-dropdown-link>
 
                                         <jet-dropdown-link
@@ -174,7 +179,7 @@
                                         <!-- Authentication -->
                                         <form @submit.prevent="logout">
                                             <jet-dropdown-link as="button">
-                                                Logout
+                                                Salir
                                             </jet-dropdown-link>
                                         </form>
                                     </template>
