@@ -1,0 +1,330 @@
+<template>
+    <div>
+        <MainLayout>
+            <template #pagina>
+                <div
+                    class=" mx-auto flex flex-col flex-wrap"
+                    style="max-width:900px;margin-bottom:30rem"
+                >
+                    <div
+                        class="px-3  flex flex-wrap items-center justify-between"
+                    >
+                        <div class="inline ">
+                            <div
+                                class="text-4xl font-extrabold border-4 rounded-full py-8 px-10"
+                                style="color:rgb(10, 20, 110);border-color:rgb(10, 20, 110)"
+                            >
+                                1
+                            </div>
+
+                            <div
+                                class=" text-center font-extrabold text-xs"
+                                style="color:rgb(10, 20, 110)"
+                            >
+                                Paso
+                            </div>
+                        </div>
+
+                        <div class="lg:flex items-center hidden">
+                            <svg
+                                v-for="i in 9"
+                                :key="i"
+                                class="ml-3 fill-current text-gray-400 w-12 h-12"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 32 32"
+                            >
+                                <path
+                                    d="M12.25 2.5938l-.7188.6875-3.5937 3.625-.6875.6875.6875.7187L15.625 16l-7.6875 7.6875-.6875.7188.6875.6874 3.5938 3.625.7187.6876.7188-.6876 12-12L25.6562 16l-.6874-.7188-12-12zm0 2.8437L22.8125 16 12.25 26.5625l-2.1875-2.1875 7.6875-7.6563.7188-.7187-.7188-.7188-7.6875-7.6562z"
+                                />
+                            </svg>
+                        </div>
+                        <div class="sm:hidden  flex items-center">
+                            <svg
+                                v-for="i in 3"
+                                :key="i"
+                                class="ml-3 fill-current text-gray-400 w-12 h-12"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 32 32"
+                            >
+                                <path
+                                    d="M12.25 2.5938l-.7188.6875-3.5937 3.625-.6875.6875.6875.7187L15.625 16l-7.6875 7.6875-.6875.7188.6875.6874 3.5938 3.625.7187.6876.7188-.6876 12-12L25.6562 16l-.6874-.7188-12-12zm0 2.8437L22.8125 16 12.25 26.5625l-2.1875-2.1875 7.6875-7.6563.7188-.7187-.7188-.7188-7.6875-7.6562z"
+                                />
+                            </svg>
+                        </div>
+                        <div class="md:hidden hidden  sm:flex items-center">
+                            <svg
+                                v-for="i in 4"
+                                :key="i"
+                                class="ml-3 fill-current text-gray-400 w-12 h-12"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 32 32"
+                            >
+                                <path
+                                    d="M12.25 2.5938l-.7188.6875-3.5937 3.625-.6875.6875.6875.7187L15.625 16l-7.6875 7.6875-.6875.7188.6875.6874 3.5938 3.625.7187.6876.7188-.6876 12-12L25.6562 16l-.6874-.7188-12-12zm0 2.8437L22.8125 16 12.25 26.5625l-2.1875-2.1875 7.6875-7.6563.7188-.7187-.7188-.7188-7.6875-7.6562z"
+                                />
+                            </svg>
+                        </div>
+                        <div class="  md:flex lg:hidden items-center hidden">
+                            <svg
+                                v-for="i in 5"
+                                :key="i"
+                                class="ml-3 fill-current text-gray-400 w-12 h-12"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 32 32"
+                            >
+                                <path
+                                    d="M12.25 2.5938l-.7188.6875-3.5937 3.625-.6875.6875.6875.7187L15.625 16l-7.6875 7.6875-.6875.7188.6875.6874 3.5938 3.625.7187.6876.7188-.6876 12-12L25.6562 16l-.6874-.7188-12-12zm0 2.8437L22.8125 16 12.25 26.5625l-2.1875-2.1875 7.6875-7.6563.7188-.7187-.7188-.7188-7.6875-7.6562z"
+                                />
+                            </svg>
+                        </div>
+                        <div class="inline ">
+                            <div
+                                class="text-4xl font-extrabold border-4 text-gray-400 border-gray-400 rounded-full py-8 px-10"
+                            >
+                                2
+                            </div>
+
+                            <div
+                                class="text-gray-400 text-center font-extrabold text-xs"
+                            >
+                                Final
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comienza el formulario -->
+                    <form action="/payment" class="px-3 mt-20" method="post">
+                        <input type="hidden" name="_token" :value="token" />
+                        <div>
+                            <div
+                                class=" text-3xl font-extrabold"
+                                style="color:rgb(10, 20, 110)"
+                            >
+                                ¿Quién envía?
+                            </div>
+                            <div class=" mt-3">
+                                <div class="font-bold">Nombre completo</div>
+                                <input
+                                    required
+                                    name="s_name"
+                                    placeholder="Nombre"
+                                    type="text"
+                                    class=" px-4 w-full flex-1  border-2 border-gray-500 rounded-lg  py-3 text-2xl font-bold"
+                                />
+                            </div>
+                            <div class=" mt-3">
+                                <div class="font-bold">Email</div>
+                                <input
+                                    required
+                                    name="s_email"
+                                    placeholder="Email"
+                                    type="email"
+                                    class=" px-4 w-full flex-1  border-2 border-gray-500 rounded-lg  py-3 text-2xl font-bold"
+                                />
+                            </div>
+                            <div class=" mt-3">
+                                <div class="font-bold">
+                                    Teléfono de contacto
+                                </div>
+                                <input
+                                    required
+                                    name="s_phone"
+                                    placeholder="Teléfono"
+                                    type="text"
+                                    class=" px-4 w-full flex-1  border-2 border-gray-500 rounded-lg  py-3 text-2xl font-bold"
+                                />
+                            </div>
+                        </div>
+                        <div class=" mt-10">
+                            <div
+                                class=" text-3xl font-extrabold "
+                                style="color:rgb(10, 20, 110)"
+                            >
+                                ¿Quién recibe?
+                            </div>
+                            <div class=" mt-3">
+                                <div class="font-bold">Nombre completo</div>
+                                <input
+                                    required
+                                    name="r_name"
+                                    placeholder="Nombre"
+                                    type="text"
+                                    class=" px-4 w-full flex-1  border-2 border-gray-500 rounded-lg  py-3 text-2xl font-bold"
+                                />
+                            </div>
+                            <div class=" mt-3">
+                                <div class="font-bold">Email</div>
+                                <input
+                                    required
+                                    name="r_email"
+                                    placeholder="Email"
+                                    type="email"
+                                    class=" px-4 w-full flex-1  border-2 border-gray-500 rounded-lg  py-3 text-2xl font-bold"
+                                />
+                            </div>
+                            <div class=" mt-3">
+                                <div class="font-bold">Cédula de identidad</div>
+                                <input
+                                    required
+                                    name="r_id"
+                                    placeholder="V12345678 ó E4578654"
+                                    type="text"
+                                    class=" px-4 w-full flex-1  border-2 border-gray-500 rounded-lg  py-3 text-2xl font-bold"
+                                />
+                            </div>
+                            <div class=" mt-3">
+                                <div class="font-bold">Banco</div>
+                                <select
+                                    required
+                                    name="r_bank"
+                                    class=" px-4 w-full flex-1  border-2 border-gray-500 rounded-lg  py-3 text-2xl font-bold"
+                                >
+                                    <option value="">Selecciona</option>
+                                    ><option value="Banplus">Banplus</option
+                                    ><option value="Banco del Sur"
+                                        >Banco del Sur</option
+                                    ><option value="Banco Caroní"
+                                        >Banco Caroní</option
+                                    ><option value="Banco Venezolano de Crédito"
+                                        >Banco Venezolano de Crédito</option
+                                    ><option value="Banco de Venezuela"
+                                        >Banco de Venezuela</option
+                                    ><option value="Banco Provincial"
+                                        >Banco Provincial</option
+                                    ><option value="Banco del Tesoro"
+                                        >Banco del Tesoro</option
+                                    ><option value="Banco Activo"
+                                        >Banco Activo</option
+                                    ><option value="Banco Nacional de Crédito"
+                                        >Banco Nacional de Crédito</option
+                                    ><option value="Banco Mercantil"
+                                        >Banco Mercantil</option
+                                    ><option value="Banesco">Banesco</option
+                                    ><option value="Bancaribe">Bancaribe</option
+                                    ><option value="Banco Fondo Común"
+                                        >Banco Fondo Común</option
+                                    ><option value="Banco Sofitasa"
+                                        >Banco Sofitasa</option
+                                    ><option value="BOD">BOD</option
+                                    ><option value="Banco Exterior"
+                                        >Banco Exterior</option
+                                    ><option value="Banco Bicentenario"
+                                        >Banco Bicentenario</option
+                                    >
+                                </select>
+                            </div>
+                            <div class=" mt-3">
+                                <div class="font-bold">Tipo de cuenta</div>
+                                <select
+                                    required
+                                    name="r_account_type"
+                                    class=" px-4 w-full flex-1  border-2 border-gray-500 rounded-lg  py-3 text-2xl font-bold"
+                                >
+                                    <option value="">Selecciona</option>
+                                    <option value="Ahorro">Ahorro</option>
+                                    <option value="Cuenta corriente"
+                                        >Cuenta Corriente</option
+                                    >
+                                </select>
+                            </div>
+                            <div class=" mt-3">
+                                <div class="font-bold">Número de cuenta</div>
+                                <input
+                                    required
+                                    name="r_account_number"
+                                    type="text"
+                                    class=" px-4 w-full flex-1  border-2 border-gray-500 rounded-lg  py-3 text-2xl font-bold"
+                                />
+                            </div>
+                            <div class="mt-6 text-center">
+                                <button
+                                    type="submit"
+                                    class=" px-5 py-3 text-white text-xl font-bold uppercase    "
+                                    style="background-color:rgb(10, 20, 110)"
+                                >
+                                    Ir al paso final
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </template>
+        </MainLayout>
+        <div class=" fixed bottom-0 left-0">
+            <div class=" ml-3 border rounded-lg shadow-xl bg-white pb-20">
+                <div
+                    class=" bg-blue-100 font-extrabold text-sm py-2 px-3 uppercase text-center"
+                >
+                    Transferencia
+                </div>
+                <div class="mt-5 px-3 text-xs">
+                    Resumen de transferencia
+                </div>
+                <div class=" mt-5 px-3">
+                    <div class=" font-extrabold text-sm">
+                        Envías
+                    </div>
+                    <div class=" flex items-center">
+                        <div
+                            class=" px-4 flex-1 items-center border-gray-500 rounded-lg  py-3 text-2xl font-bold flex"
+                        >
+                            <img
+                                class=" rounded-full border"
+                                style="height:2rem"
+                                src="/images/2170OQc6NoL._AC_.jpg"
+                            />
+                        </div>
+                        <currency-input
+                            class=" px-4 flex-1  border-2 border-gray-500 rounded-lg  py-3 text-2xl font-bold"
+                            v-model="send"
+                        />
+                    </div>
+                </div>
+                <div class=" mt-5 px-3">
+                    <div class=" font-extrabold text-sm">
+                        Recibes
+                    </div>
+                    <div class=" flex items-center">
+                        <div
+                            class=" px-4  items-center border-gray-500 rounded-lg  py-3 text-2xl font-bold flex"
+                        >
+                            <img
+                                class=" rounded-full border"
+                                style="height:2rem"
+                                src="/images/2170OQc6NoL._ACV_.jpg"
+                            />
+                        </div>
+                        <div
+                            class="    border-gray-500 rounded-lg  py-3 text-2xl font-bold"
+                        >
+                            {{ getBs }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import MainLayout from "@/Layouts/MainLayout";
+export default {
+    props: ["send"],
+    components: { MainLayout },
+    data: () => ({
+        tasa: 1762.6,
+        token: document.getElementsByTagName("meta")["csrf-token"].content
+    }),
+    computed: {
+        getBs() {
+            const total = this.tasa * this.send;
+            return new Intl.NumberFormat("de-DE", {
+                style: "currency",
+                currency: "VES"
+            }).format(total);
+        }
+    }
+};
+</script>
+
+<style></style>
