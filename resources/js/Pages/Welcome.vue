@@ -292,7 +292,7 @@ export default {
     layout: MainLayout,
     data() {
         return {
-            tasa: 1762.6,
+            tasa: 2045,
             send: 10000,
             token: document.getElementsByTagName("meta")["csrf-token"].content
         };
