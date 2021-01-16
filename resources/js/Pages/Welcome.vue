@@ -27,14 +27,36 @@
                             >
                         </div>
                         <div class=" text-sm">
-                            14/01/2021
+                            Última actualización :
+                            {{
+                                new Date(
+                                    $page.props.tasa.updated_at
+                                ).toLocaleDateString("es", {
+                                    month: "short",
+                                    day: "numeric",
+                                    year: "numeric",
+                                    hour: "numeric",
+                                    minute: "numeric"
+                                })
+                            }}
                         </div>
                     </div>
-                    <div class="px-10 py-4">
+                    <!-- <div class="px-10 py-4">
                         <span class="text-gray-800 text-xs md:text-base"
-                            >Actualizada a las 14horas.</span
+                            >Fecha de actualización :
+                            {{
+                                new Date(
+                                    $page.props.tasa.updated_at
+                                ).toLocaleDateString("es", {
+                                    month: "short",
+                                    day: "numeric",
+                                    year: "numeric",
+                                    hour: "numeric",
+                                    minute: "numeric"
+                                })
+                            }}</span
                         >
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -169,10 +191,10 @@
                         Pesotoday transferencias internacionales.
                     </div>
                     <div class=" mt-10">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Optio ipsa qui neque perspiciatis iusto! At aspernatur
-                        debitis earum, eos obcaecati fugiat repudiandae voluptas
-                        eveniet a provident rerum temporibus vitae! Nulla.
+                        Traspasamos las fronteras para llevar a tu país las
+                        remesas que requieres y sin límite alguno. Seguridad y
+                        rapidez afianzaran tu confianza en cada transacción
+                        internacional.
                     </div>
                 </div>
             </div>
@@ -225,10 +247,9 @@
                         Entregamos la máxima tasa del mercado
                     </div>
                     <div class=" mt-10">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Optio ipsa qui neque perspiciatis iusto! At aspernatur
-                        debitis earum, eos obcaecati fugiat repudiandae voluptas
-                        eveniet a provident rerum temporibus vitae! Nulla.
+                        Conocemos el mercado y nos ajustamos a tu realidad para
+                        que obtengas el máximo de tu dinero entregándote siempre
+                        la mejor tasa que podrás encontrar en el mercado.
                     </div>
                 </div>
             </div>
@@ -273,10 +294,10 @@
                         Recibe alertas y notificaciones de tus giros.
                     </div>
                     <div class=" mt-10">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Optio ipsa qui neque perspiciatis iusto! At aspernatur
-                        debitis earum, eos obcaecati fugiat repudiandae voluptas
-                        eveniet a provident rerum temporibus vitae! Nulla.
+                        Queremos que estés tranquilo mientras se procesan y
+                        verifican los datos, mantente informado del estado de
+                        tus transferencias con nuestro sistema de notificaciones
+                        automatizado vía email.
                     </div>
                 </div>
             </div>
@@ -292,7 +313,7 @@ export default {
     layout: MainLayout,
     data() {
         return {
-            tasa: 2045,
+            tasa: this.$page.props.tasa.valor,
             send: 10000,
             token: document.getElementsByTagName("meta")["csrf-token"].content
         };

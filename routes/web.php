@@ -34,6 +34,8 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+Route::get('/updatetasa', [HomeController::class, 'updateTasaForm']);
+Route::post('/updatetasa', [HomeController::class, 'updateTasa']);
 Route::post('/transfer', [HomeController::class, 'transfer']);
 Route::get('/transfer', function () {
     return Inertia::render('Welcome', [

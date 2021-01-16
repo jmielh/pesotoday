@@ -87,6 +87,40 @@
         <div class=" mt-64">
             <slot name="pagina"></slot>
         </div>
+
+        <footer
+            class=" text-white text-sm border-t py-20 bg-blue-900 text-center justify-between"
+        >
+            <div class=" flex text-center justify-center">
+                <a href="/" title="Inicio" class=" px-10 hover:underline"
+                    >Inicio</a
+                >
+                <a
+                    href="/contacto"
+                    title="Inicio"
+                    class=" px-10 hover:underline"
+                    >Contacto</a
+                >
+                <a
+                    href="/dashboard"
+                    title="Inicio"
+                    class=" px-10 hover:underline"
+                    >Mi cuenta</a
+                >
+            </div>
+            <div class=" mt-3">
+                Pesotoday Todos los derechos reservados. &copy; 2020
+            </div>
+        </footer>
+        <div class="fixed bottom-0 right-0 mr-12 mb-10 md:mb-20 z-20">
+            <a
+                class=" -mt-20"
+                target="_blank"
+                href="https://wa.me/56972429833?text=Hola,%20quisiera%20hacer%20una%20transferencia.%20"
+            >
+                <img class="w-20" src="/images/whatsapp-logo-1.png" alt="" />
+            </a>
+        </div>
     </div>
 </template>
 

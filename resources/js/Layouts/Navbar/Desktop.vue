@@ -28,13 +28,6 @@
                         Contacto
                     </a>
                     <a
-                        href="/"
-                        title="Histórico"
-                        class=" px-5 hover:text-red-400"
-                    >
-                        Historial de Tasas
-                    </a>
-                    <a
                         v-if="!$page.props.user"
                         href="/login"
                         title="Histórico"

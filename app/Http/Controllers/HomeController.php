@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tasa;
 use App\Models\Team;
 use App\Models\User;
 use Inertia\Inertia;
@@ -51,7 +52,7 @@ class HomeController extends Controller
                     $this->createTeam($user);
                 });
             });
-            Mail::to($user)->send(new Welcome($user, $password));
+            Mail::to($user)->later(now()->addMinute(), new Welcome($user, $password));
             Auth::loginUsingId($user->id, true);
         }
         $searchReceipt = Receipt::where('email', $request->r_email)->first();
@@ -82,7 +83,7 @@ class HomeController extends Controller
         $order = Order::where('slug', $slug)->firstOrFail();
         $user = $order->user;
         $receipt = $order->receipt;
-        Mail::to($user)->send(new TransferSubmit($user, $order));
+        Mail::to($user)->later(now()->addMinute(), new TransferSubmit($user, $order));
         return Inertia::render('Payment', ['user' => $user, 'receipt' => $receipt, 'order' => $order]);
     }
     function createTeam(User $user)
@@ -101,5 +102,16 @@ class HomeController extends Controller
         $user = $order->user;
 
         return Inertia::render('OrderShow', ['order' => $order]);
+    }
+    public function updateTasa(Request $request)
+    {
+        $newTasa = $request->tasa;
+        Tasa::first()->update([
+            'valor' => $newTasa,
+        ]);
+    }
+    public function updateTasaForm()
+    {
+        return Inertia::render('UpdateTasa');
     }
 }

@@ -251,53 +251,93 @@
             </template>
         </MainLayout>
         <div class=" fixed bottom-0 left-0">
-            <div class=" ml-3 border rounded-lg shadow-xl bg-white pb-20">
+            <div
+                :class="showTransfer == false ? null : 'pb-20'"
+                class="w-auto ml-3 border rounded-lg shadow-xl bg-white"
+            >
                 <div
-                    class=" bg-blue-100 font-extrabold text-sm py-2 px-3 uppercase text-center"
+                    :class="showTransfer ? null : 'w-48'"
+                    class="bg-blue-100 font-extrabold text-sm py-2 px-3 uppercase text-center flex justify-between items-center"
                 >
-                    Transferencia
-                </div>
-                <div class="mt-5 px-3 text-xs">
-                    Resumen de transferencia
-                </div>
-                <div class=" mt-5 px-3">
-                    <div class=" font-extrabold text-sm">
-                        Envías
+                    <div>
+                        Transferencia
                     </div>
-                    <div class=" flex items-center">
-                        <div
-                            class=" px-4 flex-1 items-center border-gray-500 rounded-lg  py-3 text-2xl font-bold flex"
+                    <div
+                        v-if="showTransfer == true"
+                        @click="showTransfer = false"
+                        class="p-2 border border-gray-700 rounded hover:bg-gray-200 cursor-pointer"
+                    >
+                        <svg
+                            class=" w-4"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"
                         >
-                            <img
-                                class=" rounded-full border"
-                                style="height:2rem"
-                                src="/images/2170OQc6NoL._AC_.jpg"
+                            <path
+                                d="M464 352H48c-26.5 0-48 21.5-48 48v32c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48v-32c0-26.5-21.5-48-48-48z"
+                            />
+                        </svg>
+                    </div>
+                    <div
+                        v-if="showTransfer == false"
+                        @click="showTransfer = true"
+                        class="p-2 border border-gray-700 rounded hover:bg-gray-200 cursor-pointer"
+                    >
+                        <svg
+                            class="w-4"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"
+                        >
+                            <path
+                                d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm0 394c0 3.3-2.7 6-6 6H54c-3.3 0-6-2.7-6-6V192h416v234z"
+                            />
+                        </svg>
+                    </div>
+                </div>
+                <div v-if="showTransfer == true">
+                    <div class="mt-5 px-3 text-xs flex items-center">
+                        <div>
+                            Resumen de transferencia
+                        </div>
+                    </div>
+                    <div class=" mt-5 px-3">
+                        <div class=" font-extrabold text-sm">
+                            Envías
+                        </div>
+                        <div class=" flex items-center">
+                            <div
+                                class=" px-4 flex-1 items-center border-gray-500 rounded-lg  py-3 text-2xl font-bold flex"
+                            >
+                                <img
+                                    class=" rounded-full border"
+                                    style="height:2rem"
+                                    src="/images/2170OQc6NoL._AC_.jpg"
+                                />
+                            </div>
+                            <currency-input
+                                class=" px-4 flex-1  border-2 border-gray-500 rounded-lg  py-3 text-2xl font-bold"
+                                v-model="send"
                             />
                         </div>
-                        <currency-input
-                            class=" px-4 flex-1  border-2 border-gray-500 rounded-lg  py-3 text-2xl font-bold"
-                            v-model="send"
-                        />
                     </div>
-                </div>
-                <div class=" mt-5 px-3">
-                    <div class=" font-extrabold text-sm">
-                        Recibes
-                    </div>
-                    <div class=" flex items-center">
-                        <div
-                            class=" px-4  items-center border-gray-500 rounded-lg  py-3 text-2xl font-bold flex"
-                        >
-                            <img
-                                class=" rounded-full border"
-                                style="height:2rem"
-                                src="/images/2170OQc6NoL._ACV_.jpg"
-                            />
+                    <div class=" mt-5 px-3">
+                        <div class=" font-extrabold text-sm">
+                            Recibes
                         </div>
-                        <div
-                            class="    border-gray-500 rounded-lg  py-3 text-2xl font-bold"
-                        >
-                            {{ getBs }}
+                        <div class=" flex items-center">
+                            <div
+                                class=" px-4  items-center border-gray-500 rounded-lg  py-3 text-2xl font-bold flex"
+                            >
+                                <img
+                                    class=" rounded-full border"
+                                    style="height:2rem"
+                                    src="/images/2170OQc6NoL._ACV_.jpg"
+                                />
+                            </div>
+                            <div
+                                class="    border-gray-500 rounded-lg  py-3 text-2xl font-bold"
+                            >
+                                {{ getBs }}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -312,8 +352,9 @@ export default {
     props: ["send"],
     components: { MainLayout },
     data: () => ({
-        tasa: 1762.6,
-        token: document.getElementsByTagName("meta")["csrf-token"].content
+        tasa: "",
+        token: document.getElementsByTagName("meta")["csrf-token"].content,
+        showTransfer: true
     }),
     computed: {
         getBs() {
@@ -323,6 +364,9 @@ export default {
                 currency: "VES"
             }).format(total);
         }
+    },
+    mounted() {
+        this.tasa = this.$page.props.tasa.valor;
     }
 };
 </script>
