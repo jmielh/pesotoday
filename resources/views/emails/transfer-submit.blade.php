@@ -221,7 +221,7 @@
                                                     <td align="center" valign="middle">
                                                         <table width="191" align="center" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:center;">
                                                             <tr>
-                                                                <td align="center" bgcolor="#0a146e" height="57" style="border-radius:28px;"><a href="https://bolivartoday.cl" style="font-family:'Montserrat', Helvetica, Arial, sans-serif; font-weight:700; font-size:16px; line-height:57px; color:#ffffff; text-decoration:none; text-transform:uppercase; display:block; overflow:hidden; ">IR A PESOTODAY</a></td>
+                                                                <td align="center" bgcolor="#0a146e" height="57" style="border-radius:28px;"><a href="https://bolivartoday.cl" style="font-family:'Montserrat', Helvetica, Arial, sans-serif; font-weight:700; font-size:16px; line-height:57px; color:#ffffff; text-decoration:none; text-transform:uppercase; display:block; overflow:hidden; ">IR A BOLIVARTODAY</a></td>
                                                             </tr>
                                                         </table>
 
