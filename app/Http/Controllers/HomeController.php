@@ -91,7 +91,7 @@ class HomeController extends Controller
         $order = Order::where('slug', $slug)->firstOrFail();
         $user = $order->user;
         $receipt = $order->receipt;
-        //Mail::to($user)->later(now()->addMinute(), new TransferSubmit($user, $order));
+        Mail::to($user)->later(now()->addMinute(), new TransferSubmit($user, $order));
         return Inertia::render('Payment', ['user' => $user, 'receipt' => $receipt, 'order' => $order]);
     }
     function confirmPayment(Request $request)
