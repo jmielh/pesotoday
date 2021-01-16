@@ -394,7 +394,7 @@
                                                         <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
                                                             <tr>
                                                                 <td align="center" style="font:11px Helvetica,  Arial, sans-serif; color:#484848;">
-                                                                    &copy; 2020 AvisosYa.cl, Todos los Derechos Resevados
+                                                                    &copy; 2020 Pesotoday.cl, Todos los Derechos Resevados
                                                                 </td>
                                                             </tr>
                                                             <tr>
