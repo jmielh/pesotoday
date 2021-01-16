@@ -21,17 +21,24 @@ class HomeController extends Controller
 {
     public function transfer(Request $request)
     {
+
         $send = $request->send;
+        $send_string = str_replace(',', '.', $send);
         $send = str_replace("$", "", $send);
         $send = str_replace(",", "", $send);
         $send = intval($send);
-        return Inertia::render('Transfer', ['send' => $send]);
+        $tasa = Tasa::find(1);
+        $amount_ves = $send * $tasa->valor;
+        $amount_ves = number_format($amount_ves, 2, ',', '.') . ' Bs';
+        $order = Order::create([
+            'amount_clp' => $send_string,
+            'amount_ves' => $amount_ves,
+        ]);
+        return Inertia::render('Transfer', ['order' => $order]);
     }
     public function payment(Request $request)
     {
-
-        $amount_clp = $request->send;
-        $amount_ves = $request->receive;
+        $order = Order::find($request->order);
         $searchUser = User::where('email', $request->s_email)->first();
 
         if ($searchUser) {
@@ -70,11 +77,9 @@ class HomeController extends Controller
                 'account_number' => $request->r_account_number
             ]);
         }
-        $order = Order::create([
+        $order->update([
             'user_id' => $user->id,
             'receipt_id' => $receipt->id,
-            'amount_clp' => $amount_clp,
-            'amount_ves' => $amount_ves,
             'slug' => Str::slug(Str::random(64)) . '-' . $user->id,
         ]);
         return redirect()->route('paymentAwait', $order->slug);

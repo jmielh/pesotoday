@@ -21,7 +21,7 @@
                             class="align-middle inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg"
                         >
                             <div class=" p-10 bg-yellow-200">
-                                El detalle enrtregado en esta transacción podría
+                                El detalle entregado en esta transacción podría
                                 contener
                                 <span class=" text-red-500"
                                     >un desfase de hasta 24hrs.</span
@@ -37,17 +37,16 @@
                             <div class="px-3 mt-5">
                                 <div class=" border rounded-lg shadow-lg">
                                     <div
-                                        class=" bg-blue-400  text-lg md:text-2xl rounded-t-lg font-extrabold text-center uppercase"
+                                        class=" bg-blue-400  text-lg md:text-2xl rounded-t-lg font-extrabold uppercase"
                                         style="color:#989BB2; background-color:#e1ecf7"
                                     >
-                                        <span>
-                                            Monto:
-                                            {{
-                                                new Intl.NumberFormat("de-DE", {
-                                                    style: "currency",
-                                                    currency: "clp"
-                                                }).format(order.amount_clp)
-                                            }}
+                                        <span class="ml-2">
+                                            Enviaste:
+                                            {{ order.amount_clp }}
+                                        </span>
+                                        <span class="ml-2">
+                                            Reciben:
+                                            {{ order.amount_ves }}
                                         </span>
                                         <span class="ml-3">
                                             {{

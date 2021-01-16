@@ -111,7 +111,7 @@
                             <div
                                 class="  font-extrabold text-xl md:text-2xl text-center"
                             >
-                                ${{ Math.trunc(send).toLocaleString("es") }}
+                                {{ order.amount_clp }}
                             </div>
                         </div>
                         <div class=" w-1/5">
@@ -141,10 +141,7 @@
                             <div
                                 class="  font-extrabold text-xl md:text-2xl text-center"
                             >
-                                {{
-                                    Math.trunc(tasa * send).toLocaleString("es")
-                                }}
-                                Bs
+                                {{ order.amount_ves }}
                             </div>
                         </div>
                     </div>
@@ -153,11 +150,7 @@
                     <form action="/payment" class="px-3 mt-20" method="post">
                         <input type="hidden" name="_token" :value="token" />
                         <input type="hidden" name="send" :value="send" />
-                        <input
-                            type="hidden"
-                            name="receive"
-                            :value="send * tasa"
-                        />
+                        <input type="hidden" name="order" :value="order.id" />
                         <div>
                             <div
                                 class=" text-3xl font-extrabold"
@@ -412,22 +405,13 @@
 <script>
 import MainLayout from "@/Layouts/MainLayout";
 export default {
-    props: ["send"],
+    props: ["order"],
     components: { MainLayout },
     data: () => ({
         tasa: "",
         token: document.getElementsByTagName("meta")["csrf-token"].content,
         showTransfer: true
     }),
-    computed: {
-        getBs() {
-            const total = this.tasa * this.send;
-            return new Intl.NumberFormat("de-DE", {
-                style: "currency",
-                currency: "VES"
-            }).format(total);
-        }
-    },
     mounted() {
         this.tasa = this.$page.props.tasa.valor;
     }

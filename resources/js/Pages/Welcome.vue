@@ -65,6 +65,7 @@
                 <div class="    grid gap-10 grid-cols-1 md:grid-cols-3">
                     <div class=" flex flex-col">
                         <div class=" text-lg mb-2 font-extrabold">Cantidad</div>
+                        <input type="hidden" name="receive" :value="getBs" />
 
                         <currency-input
                             name="send"
@@ -315,7 +316,8 @@ export default {
         return {
             tasa: this.$page.props.tasa.valor,
             send: 10000,
-            token: document.getElementsByTagName("meta")["csrf-token"].content
+            token: document.getElementsByTagName("meta")["csrf-token"].content,
+            receive: ""
         };
     },
     mounted() {
