@@ -155,6 +155,11 @@
                             >
                                 Realiza el pago en alguna cuenta de pesotoday
                             </div>
+                            <div
+                                class="ml-10 mt-4 text-lg font-extrabold md:text-2xl"
+                            >
+                                Monto a transferir: {{ order.amount_clp }}
+                            </div>
                             <div class=" flex flex-wrap mt-5 px-10 pb-5">
                                 <div class="w-1/2 md:w-1/3">
                                     <div
@@ -219,6 +224,7 @@
                             >
                                 Transferencia en curso
                             </div>
+
                             <div class=" flex flex-wrap mt-5 px-10 pb-5">
                                 <div class=" w-1/3">
                                     <div
@@ -306,22 +312,55 @@
                         Sube tu comprobante de pago o depósito
                     </div>
 
-                    <div class="text-center justify-center mt-5">
+                    <form
+                        action="/payment/check"
+                        method="POST"
+                        enctype="multipart/form-data"
+                        class="text-center justify-center mt-5"
+                    >
                         <div class="input-file-container mx-auto">
                             <input
                                 class="input-file"
                                 id="my-file"
                                 type="file"
+                                name="comprobante"
+                            />
+                            <input type="hidden" :value="token" name="_token" />
+                            <input
+                                type="hidden"
+                                :value="order.id"
+                                name="order_id"
                             />
                             <label
                                 tabindex="0"
                                 for="my-file"
                                 class="input-file-trigger"
-                                >Subir comprobante</label
+                                >Seleccionar comprobante</label
                             >
                         </div>
                         <p class="file-return"></p>
-                    </div>
+                        <button
+                            type="submit"
+                            class=" mt-10 flex mx-auto px-10 py-4 items-center bg-blue-900 hover:bg-blue-700 text-white"
+                        >
+                            <div>Enviar comprobante</div>
+                            <svg
+                                class=" stroke-current"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"
+                                />
+                            </svg>
+                        </button>
+                    </form>
                 </div>
             </template>
         </MainLayout>
@@ -393,7 +432,7 @@ export default {
 .js .input-file-trigger {
     display: block;
     padding: 14px 15px;
-    background: #3d87db;
+    background: #05a32d;
     color: white;
     font-size: 1em;
     transition: all 0.4s;

@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->string('slug')->unique()->nullable();
             $table->string('amount_clp');
             $table->string('amount_ves');
+            $table->string('voucher')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('receipt_id')->nullable();

@@ -55,8 +55,9 @@ Route::get('/payment', function () {
     ]);
 });
 Route::get('/payment/order/{slug}', [HomeController::class, 'await'])->name('paymentAwait');
+Route::post('/payment/check', [HomeController::class, 'confirmPayment'])->name('confirmPayment');
 
-Route::get('/order/{slug}', [HomeController::class, 'showOrder']);
+Route::get('/order/{slug}', [HomeController::class, 'showOrder'])->name('showOrder');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');

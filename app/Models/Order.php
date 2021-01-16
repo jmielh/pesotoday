@@ -16,6 +16,7 @@ class Order extends Model
         'amount_clp',
         'amount_ves',
         'slug',
+        'voucher'
     ];
 
     public function user()

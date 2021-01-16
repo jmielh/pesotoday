@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic;
 
 class HomeController extends Controller
 {
@@ -89,8 +91,23 @@ class HomeController extends Controller
         $order = Order::where('slug', $slug)->firstOrFail();
         $user = $order->user;
         $receipt = $order->receipt;
-        Mail::to($user)->later(now()->addMinute(), new TransferSubmit($user, $order));
+        //Mail::to($user)->later(now()->addMinute(), new TransferSubmit($user, $order));
         return Inertia::render('Payment', ['user' => $user, 'receipt' => $receipt, 'order' => $order]);
+    }
+    function confirmPayment(Request $request)
+    {
+        $order = Order::find($request->order_id);
+        $file = $request->file('comprobante');
+        $name = Str::random(40) . '.' . time() . '.' . $file->getClientOriginalExtension();
+        $image = ImageManagerStatic::make($file->getRealPath())
+            ->orientate()
+            ->widen(600);
+        $filePath = '/images/' . $order->id . '/' . $name;
+        $path = Storage::disk('s3')->put($filePath, $image->stream());
+        $order->update(
+            ['voucher' => 'https://s3-sa-east-1.amazonaws.com/pesotoday.amazonaws.mini.public' . $filePath,]
+        );
+        return redirect()->route('showOrder', $order->slug);
     }
     function createTeam(User $user)
     {

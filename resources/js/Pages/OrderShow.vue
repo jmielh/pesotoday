@@ -11,6 +11,23 @@
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <a
+                    href="/dashboard"
+                    class="-mt-3 text-blue-500 text-sm mb-5 hover:underline flex items-center"
+                >
+                    <svg
+                        class=" w-4 mr-3 fill-current text-blue-500"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"
+                    >
+                        <path
+                            d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"
+                        />
+                    </svg>
+                    <div>
+                        Ver todas mis transferencias
+                    </div>
+                </a>
                 <div
                     class="bg-white pb-5 overflow-hidden shadow-xl sm:rounded-lg"
                 >
@@ -140,6 +157,17 @@
                                                 {{ order.receipt.r_id }}
                                             </div>
                                         </div>
+                                    </div>
+                                    <div
+                                        class=" text-center text-2xl font-extrabold uppercase mb-10"
+                                    >
+                                        Comprobante adjunto
+                                    </div>
+                                    <div class=" mt-5">
+                                        <img
+                                            class=" mx-auto"
+                                            :src="order.voucher"
+                                        />
                                     </div>
                                 </div>
                             </div>
