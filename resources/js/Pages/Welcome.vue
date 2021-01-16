@@ -249,7 +249,7 @@
                     <div class=" mt-10">
                         Conocemos el mercado y nos ajustamos a tu realidad para
                         que obtengas el máximo de tu dinero entregándote siempre
-                        la mejor tasa que podrás encontrar en el mercado.
+                        la mejor tasa que podrás encontrar.
                     </div>
                 </div>
             </div>

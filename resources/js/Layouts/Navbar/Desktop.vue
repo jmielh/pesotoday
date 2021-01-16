@@ -22,7 +22,8 @@
                     </a>
                     <a
                         title="Contáctanos"
-                        href="/"
+                        target="_blank"
+                        href="https://wa.me/56972429833?text=Hola,%20quisiera%20hacer%20una%20transferencia.%20"
                         class=" px-5 hover:text-red-400"
                     >
                         Contacto
