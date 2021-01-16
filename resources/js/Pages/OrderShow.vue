@@ -46,7 +46,7 @@
                                 Si notas algún problema, por favor
                                 <a
                                     class=" text-blue-600 underline"
-                                    href="mailto:contacto@pesotoday.cl"
+                                    href="mailto:contacto@bolivartoday.cl"
                                     >comunícate</a
                                 >
                                 con nosotros.

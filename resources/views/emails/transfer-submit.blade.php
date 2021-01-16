@@ -15,7 +15,7 @@
 }]
 > </style>
 > <![endif]-->
-        <title>Pesotoday | Tu transferencia está preparada!</title>
+        <title>Bolivartoday | Tu transferencia está preparada!</title>
         <style type="text/css">
             div,
             p,
@@ -205,7 +205,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td width="28">&nbsp;</td>
-                                                    <td align="center" valign="middle"><a href="https://pesotoday.cl"><img src="https://s3-sa-east-1.amazonaws.com/pesotoday.amazonaws.mini.public/emails/images/234645754674567.png" width=150 alt="Pesotoday.cl"></a></td>
+                                                    <td align="center" valign="middle"><a href="https://bolivartoday.cl"><img src="https://s3-sa-east-1.amazonaws.com/bolivartoday.amazonaws.mini.public/emails/images/234645754674567.png" width=150 alt="Bolivartoday.cl"></a></td>
                                                 </tr>
                                                 <tr>
                                                 </tr>
@@ -221,7 +221,7 @@
                                                     <td align="center" valign="middle">
                                                         <table width="191" align="center" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:center;">
                                                             <tr>
-                                                                <td align="center" bgcolor="#0a146e" height="57" style="border-radius:28px;"><a href="https://pesotoday.cl" style="font-family:'Montserrat', Helvetica, Arial, sans-serif; font-weight:700; font-size:16px; line-height:57px; color:#ffffff; text-decoration:none; text-transform:uppercase; display:block; overflow:hidden; ">IR A PESOTODAY</a></td>
+                                                                <td align="center" bgcolor="#0a146e" height="57" style="border-radius:28px;"><a href="https://bolivartoday.cl" style="font-family:'Montserrat', Helvetica, Arial, sans-serif; font-weight:700; font-size:16px; line-height:57px; color:#ffffff; text-decoration:none; text-transform:uppercase; display:block; overflow:hidden; ">IR A PESOTODAY</a></td>
                                                             </tr>
                                                         </table>
 
@@ -289,7 +289,7 @@
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <td bgcolor="#f8f8f8" style="font:14px Arial, Helvetica, sans-serif; color:#3a3a3a;">
-                                                                                            Sube el comprobante de pago del monto que deseas enviar en pesos chilenos. <a target="_blank" href="https://pesotoday.cl/payment/order/{{$order->slug}}">Súbelo aquí</a></td>
+                                                                                            Sube el comprobante de pago del monto que deseas enviar en pesos chilenos. <a target="_blank" href="https://bolivartoday.cl/payment/order/{{$order->slug}}">Súbelo aquí</a></td>
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <td bgcolor="#f8f8f8" height="25">&nbsp;</td>
@@ -304,7 +304,7 @@
                                                                                         <td height="25">&nbsp;</td>
                                                                                     </tr>
                                                                                     <tr>
-                                                                                        <td style="font:bold 16px Arial, Helvetica, sans-serif; color:#4a4a4a; padding:0 10px;"><a target="_blank" href="https://pesotoday.cl/payment/order/{{$order->slug}}">https://pesotoday.cl/payment/order/{{$order->slug}}</a></td>
+                                                                                        <td style="font:bold 16px Arial, Helvetica, sans-serif; color:#4a4a4a; padding:0 10px;"><a target="_blank" href="https://bolivartoday.cl/payment/order/{{$order->slug}}">https://bolivartoday.cl/payment/order/{{$order->slug}}</a></td>
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <td style="font:bold 16px Arial, Helvetica, sans-serif; color:#5a5858; padding:10px 10px;">Recuerda siempre seguir estos consejos de seguridad!</td>
@@ -394,7 +394,7 @@
                                                         <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
                                                             <tr>
                                                                 <td align="center" style="font:11px Helvetica,  Arial, sans-serif; color:#484848;">
-                                                                    &copy; 2020 Pesotoday.cl, Todos los Derechos Resevados
+                                                                    &copy; 2020 Bolivartoday.cl, Todos los Derechos Resevados
                                                                 </td>
                                                             </tr>
                                                             <tr>

@@ -9,7 +9,7 @@
                     <a href="/"
                         ><img
                             style=" max-width:150px"
-                            src="/images/pesotoday.png"
+                            src="/images/bolivartoday.png"
                     /></a>
                 </div>
                 <div class="flex items-center">
@@ -132,7 +132,7 @@
                 class="  mx-auto flex items-center px-5 justify-between"
                 style=" max-width:900px"
             >
-                <img style=" max-width:150px" src="/images/pesotoday.png" />
+                <img style=" max-width:150px" src="/images/bolivartoday.png" />
                 <div>
                     |||
                 </div>

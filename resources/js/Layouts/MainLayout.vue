@@ -109,7 +109,7 @@
                 >
             </div>
             <div class=" mt-3">
-                Pesotoday Todos los derechos reservados. &copy; 2020
+                Bolivartoday Todos los derechos reservados. &copy; 2020
             </div>
         </footer>
         <div class="fixed bottom-0 right-0 mr-12 mb-10 md:mb-20 z-20">

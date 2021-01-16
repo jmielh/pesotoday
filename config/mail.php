@@ -84,7 +84,7 @@ return [
     */
 
     'from' => [
-        'address' => 'notificaciones@pesotoday.cl', 'name' => 'Pesotoday.cl'
+        'address' => 'notificaciones@bolivartoday.cl', 'name' => 'Bolivartoday.cl'
     ],
 
     /*

@@ -145,7 +145,7 @@
             La máxima rapidez, seguridad y tasa del mercado
         </div>
         <div class=" mt-10 px-5 text-justify md:text-left">
-            Pesotoday nace como una solución segura, rápida y confiable para
+            Bolivartoday nace como una solución segura, rápida y confiable para
             realizar transferencias a venezuela desde chile a través de una
             plataforma digital automatizada. Sabemos que la seguridad de que tu
             dinero llegue como corresponde a destino es lo más importante, pero
@@ -153,7 +153,7 @@
             claro y transparente, es por eso que todas nuestras operaciones
             entregan un comprobante que te llega directamente al correo
             electrónico. Somos la mejor y más rápida alternativa del mercado,
-            bienvenido a Pesotoday.cl
+            bienvenido a Bolivartoday.cl
         </div>
         <div class="mt-10  p-5 flex flex-wrap">
             <div class="w-full md:w-1/3 p-4  bg-white">
@@ -189,7 +189,7 @@
                         style="color:rgb(10, 20, 110)"
                         class=" text-2xl font-extrabold"
                     >
-                        Pesotoday transferencias internacionales.
+                        Bolivartoday transferencias internacionales.
                     </div>
                     <div class=" mt-10">
                         Traspasamos las fronteras para llevar a tu país las

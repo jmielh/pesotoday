@@ -118,7 +118,7 @@
                         >, de otra forma la transacción será cancelada
                         automáticamente. ¿Tienes alguna duda?
                         <a
-                            href="mailto:contacto@pesotoday.cl"
+                            href="mailto:contacto@bolivartoday.cl"
                             class=" text-blue-600"
                             >contáctanos.</a
                         >
@@ -153,7 +153,7 @@
                                 class=" bg-blue-400  text-lg md:text-2xl rounded-t-lg font-extrabold text-center uppercase"
                                 style="color:#989BB2; background-color:#e1ecf7"
                             >
-                                Realiza el pago en alguna cuenta de pesotoday
+                                Realiza el pago en alguna cuenta de Bolivartoday
                             </div>
                             <div
                                 class="ml-10 mt-4 text-lg font-extrabold md:text-2xl"
@@ -170,7 +170,7 @@
                                     <div
                                         class=" text-gray-800 font-light sm:text-lg md:text-2xl"
                                     >
-                                        Pesotoday Spa
+                                        Bolivartoday Spa
                                     </div>
                                     <div
                                         class=" text-gray-800 font-light sm:text-lg md:text-2xl"

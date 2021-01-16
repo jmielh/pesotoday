@@ -15,7 +15,7 @@
 }]
 > </style>
 > <![endif]-->
-        <title>Pesotoday | Bienvenido!</title>
+        <title>Bolivartoday | Bienvenido!</title>
         <style type="text/css">
             div,
             p,
@@ -202,7 +202,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td width="28">&nbsp;</td>
-                                                    <td align="center" valign="middle"><a href="https://pesotoday.cl"><img src="https://s3-sa-east-1.amazonaws.com/pesotoday.amazonaws.mini.public/emails/images/234645754674567.png" alt="Pesotoday.cl"></a></td>
+                                                    <td align="center" valign="middle"><a href="https://bolivartoday.cl"><img src="https://s3-sa-east-1.amazonaws.com/bolivartoday.amazonaws.mini.public/emails/images/234645754674567.png" alt="Bolivartoday.cl"></a></td>
                                                 </tr>
                                                 <tr>
                                                 </tr>
@@ -266,7 +266,7 @@
                                                     <td align="center">
                                                         <table align="center" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:center;">
                                                             <tr>
-                                                                <td align="center" bgcolor="#0a146e" style="border-radius:28px; padding:0 28px;" height="61"><a href="https://pesotoday.cl" style="font:700 16px 'Montserrat', Helvetica, Arial, sans-serif; color:#ffffff; text-decoration:none; text-transform:uppercase; display:block; overflow:hidden; outline:none;">HAZ TU PRIMERA TRANSFERENCIA</a></td>
+                                                                <td align="center" bgcolor="#0a146e" style="border-radius:28px; padding:0 28px;" height="61"><a href="https://bolivartoday.cl" style="font:700 16px 'Montserrat', Helvetica, Arial, sans-serif; color:#ffffff; text-decoration:none; text-transform:uppercase; display:block; overflow:hidden; outline:none;">HAZ TU PRIMERA TRANSFERENCIA</a></td>
                                                             </tr>
                                                         </table>
 
@@ -283,7 +283,7 @@
                                                     <td align="center">
                                                         <table align="center" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:center;">
                                                             <tr>
-                                                                <td align="center" bgcolor="#0a146e" style="border-radius:28px; padding:0 28px;" height="61"><a href="https://pesotoday.cl/login" style="font:700 16px 'Montserrat', Helvetica, Arial, sans-serif; color:#ffffff; text-decoration:none; text-transform:uppercase; display:block; overflow:hidden; outline:none;">O INICIA SESIÓN EN TU CUENTA</a></td>
+                                                                <td align="center" bgcolor="#0a146e" style="border-radius:28px; padding:0 28px;" height="61"><a href="https://bolivartoday.cl/login" style="font:700 16px 'Montserrat', Helvetica, Arial, sans-serif; color:#ffffff; text-decoration:none; text-transform:uppercase; display:block; overflow:hidden; outline:none;">O INICIA SESIÓN EN TU CUENTA</a></td>
                                                             </tr>
                                                         </table>
 

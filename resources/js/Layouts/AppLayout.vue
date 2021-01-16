@@ -79,7 +79,9 @@
                         <div class="flex">
                             <!-- Logo -->
                             <a href="/"
-                                ><img class="h-20" src="/images/pesotoday.jpg"
+                                ><img
+                                    class="h-20"
+                                    src="/images/bolivartoday.jpg"
                             /></a>
 
                             <!-- Navigation Links -->

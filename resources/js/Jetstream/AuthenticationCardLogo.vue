@@ -1,5 +1,5 @@
 <template>
     <inertia-link :href="'/'">
-        <img src="/images/pesotoday.png" />
+        <img src="/images/bolivartoday.png" />
     </inertia-link>
 </template>

@@ -105,7 +105,7 @@ class HomeController extends Controller
         $filePath = '/images/' . $order->id . '/' . $name;
         $path = Storage::disk('s3')->put($filePath, $image->stream());
         $order->update(
-            ['voucher' => 'https://s3-sa-east-1.amazonaws.com/pesotoday.amazonaws.mini.public' . $filePath,]
+            ['voucher' => 'https://s3-sa-east-1.amazonaws.com/bolivartoday.amazonaws.mini.public' . $filePath,]
         );
         return redirect()->route('showOrder', $order->slug);
     }
