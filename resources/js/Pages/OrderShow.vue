@@ -46,7 +46,7 @@
                                                 new Intl.NumberFormat("de-DE", {
                                                     style: "currency",
                                                     currency: "clp"
-                                                }).format(10000)
+                                                }).format(order.amount_clp)
                                             }}
                                         </span>
                                         <span class="ml-3">

@@ -40,7 +40,7 @@
                         </div>
                         <div class="sm:hidden  flex items-center">
                             <svg
-                                v-for="i in 3"
+                                v-for="i in 2"
                                 :key="i"
                                 class="ml-3 fill-current text-gray-400 w-12 h-12"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -92,9 +92,74 @@
                         </div>
                     </div>
 
+                    <div
+                        class=" mt-20 flex items-center bg-gray-100 rounded-lg py-5 shadow-lg"
+                    >
+                        <div class=" w-1/3">
+                            <svg
+                                class="mx-auto w-20 md:w-48 fill-current text-blue-500"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 576 512"
+                            >
+                                <path
+                                    d="M528 32H48C21.5 32 0 53.5 0 80v16h576V80c0-26.5-21.5-48-48-48zM0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V128H0v304zm352-232c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zM176 192c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM67.1 396.2C75.5 370.5 99.6 352 128 352h8.2c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h8.2c28.4 0 52.5 18.5 60.9 44.2 3.2 9.9-5.2 19.8-15.6 19.8H82.7c-10.4 0-18.8-10-15.6-19.8z"
+                                />
+                            </svg>
+                            <div class=" mt-5 uppercase text-center">
+                                Envías
+                            </div>
+                            <div
+                                class="  font-extrabold text-xl md:text-2xl text-center"
+                            >
+                                ${{ Math.trunc(send).toLocaleString("de") }}
+                            </div>
+                        </div>
+                        <div class=" w-1/5">
+                            <svg
+                                class=" md:w-20 w-10 fill-current text-green-500 mx-auto"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 32 32"
+                            >
+                                <path
+                                    d="M21.1875 9.2813l-1.4063 1.4375L24.0626 15H4v2h20.0625l-4.2813 4.2813 1.4063 1.4374L27.9063 16z"
+                                />
+                            </svg>
+                        </div>
+                        <div class=" flex-1">
+                            <svg
+                                class=" mx-auto w-20 md:w-48 fill-current text-green-500"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 576 512"
+                            >
+                                <path
+                                    d="M528 32H48C21.5 32 0 53.5 0 80v16h576V80c0-26.5-21.5-48-48-48zM0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V128H0v304zm352-232c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zM176 192c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM67.1 396.2C75.5 370.5 99.6 352 128 352h8.2c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h8.2c28.4 0 52.5 18.5 60.9 44.2 3.2 9.9-5.2 19.8-15.6 19.8H82.7c-10.4 0-18.8-10-15.6-19.8z"
+                                />
+                            </svg>
+                            <div class=" mt-5 uppercase text-center">
+                                Recibe
+                            </div>
+                            <div
+                                class="  font-extrabold text-xl md:text-2xl text-center"
+                            >
+                                {{
+                                    new Intl.NumberFormat("de-DE", {
+                                        style: "decimal"
+                                    }).format(tasa * send)
+                                }}
+                                Bs
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Comienza el formulario -->
                     <form action="/payment" class="px-3 mt-20" method="post">
                         <input type="hidden" name="_token" :value="token" />
+                        <input type="hidden" name="send" :value="send" />
+                        <input
+                            type="hidden"
+                            name="receive"
+                            :value="send * tasa"
+                        />
                         <div>
                             <div
                                 class=" text-3xl font-extrabold"
@@ -250,7 +315,7 @@
                 </div>
             </template>
         </MainLayout>
-        <div class=" fixed bottom-0 left-0">
+        <!-- <div class=" fixed bottom-0 left-0">
             <div
                 :class="showTransfer == false ? null : 'pb-20'"
                 class="w-auto ml-3 border rounded-lg shadow-xl bg-white"
@@ -342,7 +407,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 

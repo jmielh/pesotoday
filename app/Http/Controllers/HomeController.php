@@ -29,8 +29,9 @@ class HomeController extends Controller
     }
     public function payment(Request $request)
     {
-        $amount_clp = 10000;
-        $amount_ves = 17560000;
+
+        $amount_clp = $request->send;
+        $amount_ves = $request->receive;
         $searchUser = User::where('email', $request->s_email)->first();
 
         if ($searchUser) {
