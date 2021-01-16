@@ -111,7 +111,7 @@
                             <div
                                 class="  font-extrabold text-xl md:text-2xl text-center"
                             >
-                                ${{ Math.trunc(send).toLocaleString("de") }}
+                                ${{ Math.trunc(send).toLocaleString("es") }}
                             </div>
                         </div>
                         <div class=" w-1/5">
@@ -142,9 +142,7 @@
                                 class="  font-extrabold text-xl md:text-2xl text-center"
                             >
                                 {{
-                                    new Intl.NumberFormat("de-DE", {
-                                        style: "decimal"
-                                    }).format(tasa * send)
+                                    Math.trunc(tasa * send).toLocaleString("es")
                                 }}
                                 Bs
                             </div>

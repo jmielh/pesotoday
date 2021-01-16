@@ -14,3 +14,5 @@ yarn-error.log
 public/js/*
 
 public/css/.app.css.icloud
+public/js/app.js
+public/css/app.css
