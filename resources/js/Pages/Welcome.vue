@@ -66,13 +66,20 @@
                     <div class=" flex flex-col">
                         <div class=" text-lg mb-2 font-extrabold">Cantidad</div>
                         <input type="hidden" name="receive" :value="getBs" />
-
-                        <currency-input
-                            name="send"
-                            class=" px-4 flex-1  border-2 border-gray-500 rounded-lg  py-3 text-2xl font-bold"
-                            v-model="send"
-                        />
+                        <div class="flex items-center relative flex-1">
+                            <span
+                                class="text-2xl font-bold absolute left-0 ml-5"
+                                >$</span
+                            >
+                            <input
+                                v-model="send"
+                                class=" min-h-full pl-10 border-2 flex-1 items-center border-gray-500 rounded-lg  py-3 text-2xl font-bold flex"
+                                type="number"
+                                name="send"
+                            />
+                        </div>
                     </div>
+
                     <div class=" flex flex-col">
                         <div class=" text-lg mb-2 font-extrabold">Desde</div>
 
@@ -309,8 +316,9 @@
 <script>
 import MainLayout from "@/Layouts/MainLayout";
 import Input from "../Jetstream/Input.vue";
+import Button from "../Jetstream/Button.vue";
 export default {
-    components: { Input },
+    components: { Input, Button },
     layout: MainLayout,
     data() {
         return {
@@ -320,9 +328,6 @@ export default {
             receive: ""
         };
     },
-    mounted() {
-        console.log(this.$page.props.csrf_token);
-    },
     computed: {
         getBs() {
             const total = this.tasa * this.send;
@@ -331,6 +336,24 @@ export default {
                 currency: "VES"
             }).format(total);
         }
+    },
+    methods: {
+        showSend() {
+            console.log(this.send);
+        }
     }
 };
 </script>
+<style scoped>
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+</style>

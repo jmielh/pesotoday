@@ -11,7 +11,7 @@ Vue.use(InertiaPlugin);
 Vue.use(PortalVue);
 const pluginOptions = {
   /* see config reference */
-  globalOptions: { currency: 'usd', locale: 'cl', precision:0, allowNegative:false, distractionFree:false, valueRange:{min:10000},valueAsInteger:true}
+  globalOptions: { currency: 'clp', locale: 'cl', precision:0, allowNegative:false, distractionFree:false, valueRange:{min:10000},valueAsInteger:true, valueAsInteger:true}
 }
 Vue.use(VueCurrencyInput, pluginOptions)
 

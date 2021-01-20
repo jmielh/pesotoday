@@ -25,15 +25,12 @@ class HomeController extends Controller
     {
 
         $send = $request->send;
-        $send_string = str_replace(',', '.', $send);
-        $send = str_replace("$", "", $send);
-        $send = str_replace(",", "", $send);
-        $send = intval($send);
+        $send_db = '$' . number_format($send, 0, ',', '.');
         $tasa = Tasa::find(1);
         $amount_ves = $send * $tasa->valor;
         $amount_ves = number_format($amount_ves, 2, ',', '.') . ' Bs';
         $order = Order::create([
-            'amount_clp' => $send_string,
+            'amount_clp' => $send_db,
             'amount_ves' => $amount_ves,
         ]);
         return Inertia::render('Transfer', ['order' => $order]);
