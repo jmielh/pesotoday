@@ -12,6 +12,7 @@ use App\Models\Receipt;
 use Illuminate\Support\Str;
 use App\Mail\TransferSubmit;
 use Illuminate\Http\Request;
+use App\Mail\PaymentReceived;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -104,6 +105,8 @@ class HomeController extends Controller
         $order->update(
             ['voucher' => 'https://s3-sa-east-1.amazonaws.com/bolivartoday.amazonaws.mini.public' . $filePath,]
         );
+        $voucher_link = 'https://s3-sa-east-1.amazonaws.com/bolivartoday.amazonaws.mini.public' . $filePath;
+        Mail::to('transferencias@bolivartoday.cl')->send(new PaymentReceived($voucher_link, $order));
         return redirect()->route('showOrder', $order->slug);
     }
     function createTeam(User $user)
